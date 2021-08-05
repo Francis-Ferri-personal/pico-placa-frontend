@@ -6,3 +6,15 @@ h1 {
 .container {
 	background-color: white;
 }
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+.image {
+	width: 100%;
+}
+
+button {
+	text-transform: uppercase;
+}
