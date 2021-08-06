@@ -11,8 +11,8 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "moment": "^2.29.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-scripts": "4.0.3",
     "sweetalert2": "^11.1.2",
     "typescript": "^4.1.2",
@@ -43,6 +43,11 @@
     ]
   },
   "devDependencies": {
-    "@types/validator": "github:types/validator"
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/validator": "github:types/validator",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.2"
   }
 }

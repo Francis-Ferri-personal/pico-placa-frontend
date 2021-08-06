@@ -33,7 +33,6 @@ const PicoPlacaForm = () => {
 		}
 		checkPicoPlaca(form)
 			.then((allowed) => {
-				console.log(allowed);
 				if (allowed) {
 					Swal.fire(
 						"No Pico & Placa",
@@ -75,7 +74,7 @@ const PicoPlacaForm = () => {
 									placeholder="Write your plate number"
 								/>
 								<div className="invalid-feedback">
-									Please provide a valid License plate number.
+									Please provide a valid plate number.
 								</div>
 								{/* is-invalid */}
 							</div>

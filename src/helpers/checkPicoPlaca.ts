@@ -16,7 +16,6 @@ export const validateForm = ({ plateNumber, date, time }: PicoPlacaData) => {
 
 export const checkPicoPlaca = async (picoPlacaData: PicoPlacaData) => {
 	const apiUrl = `${baseURL}/pico-placa`;
-	console.log(picoPlacaData);
 	try {
 		const resp = await fetch(apiUrl, {
 			method: "post",
