@@ -3,6 +3,7 @@ import { PicoPlacaData } from "../types/picoPlaca";
 import { useState } from "react";
 
 import Swal from "sweetalert2";
+import { checkPicoPlaca } from "../helpers/checkPicoPlaca";
 
 const PicoPlacaForm = () => {
 	const { plateNumber, date, time, handleChange, form } =
@@ -16,15 +17,28 @@ const PicoPlacaForm = () => {
 
 	const handleSubmit = () => {
 		setLoading(true);
-		try {
-			Swal.fire(
-				"No Pico & Placa",
-				"You can drive your car at that time!",
-				"success"
-			);
-		} catch (error) {
-			Swal.fire("Error", error, "error");
-		}
+
+		checkPicoPlaca(form)
+			.then((allowed) => {
+				console.log(allowed);
+				if (allowed) {
+					Swal.fire(
+						"No Pico & Placa",
+						"You can drive your car at that time!",
+						"success"
+					);
+				} else {
+					Swal.fire(
+						"Pico & Placa",
+						"You can't drive your car at that time!",
+						"info"
+					);
+				}
+			})
+			.catch(() => {
+				Swal.fire("Error", "There was an error reaching the server", "error");
+			});
+
 		setLoading(false);
 	};
 
