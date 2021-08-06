@@ -1,20 +1,31 @@
 import useForm from "../hooks/useForm";
+import { PicoPlacaData } from "../types/picoPlaca";
+import { useState } from "react";
 
-interface FormData {
-	plateNumber: string;
-	date: any;
-	time: any;
-}
+import Swal from "sweetalert2";
 
 const PicoPlacaForm = () => {
-	const { plateNumber, date, time, handleChange, form } = useForm<FormData>({
-		plateNumber: "",
-		date: "",
-		time: ""
-	});
+	const { plateNumber, date, time, handleChange, form } =
+		useForm<PicoPlacaData>({
+			plateNumber: "",
+			date: "",
+			time: ""
+		});
+
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = () => {
-		alert("se dio click");
+		setLoading(true);
+		try {
+			Swal.fire(
+				"No Pico & Placa",
+				"You can drive your car at that time!",
+				"success"
+			);
+		} catch (error) {
+			Swal.fire("Error", error, "error");
+		}
+		setLoading(false);
 	};
 
 	return (
@@ -68,6 +79,7 @@ const PicoPlacaForm = () => {
 								className="btn btn-success"
 								type="button"
 								onClick={handleSubmit}
+								disabled={loading}
 							>
 								Check pico & placa
 							</button>
