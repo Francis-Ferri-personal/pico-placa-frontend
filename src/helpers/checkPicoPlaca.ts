@@ -1,7 +1,7 @@
 import { PicoPlacaData } from "../types/picoPlaca";
 import moment from "moment";
 
-const baseURL = process.env.BACKEND_URL || "http://localhost:4000";
+const baseURL = process.env.REACT_APP_BACKEND_URL || "http://35.238.213.28:4000";
 
 export const validateForm = ({ plateNumber, date, time }: PicoPlacaData) => {
 	const plateRegExp = new RegExp("^[A-Z]{3}-[0-9]{3}$");

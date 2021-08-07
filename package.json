@@ -15,7 +15,6 @@
     "react-dom": "^16.13.0",
     "react-scripts": "4.0.3",
     "sweetalert2": "^11.1.2",
-    "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -48,6 +47,7 @@
     "@types/validator": "github:types/validator",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
-    "enzyme-to-json": "^3.6.2"
+    "enzyme-to-json": "^3.6.2",
+    "typescript": "^4.3.5"
   }
 }
