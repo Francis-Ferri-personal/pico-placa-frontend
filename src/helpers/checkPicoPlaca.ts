@@ -10,7 +10,7 @@ export const validateForm = ({ plateNumber, date, time }: PicoPlacaData) => {
 	const dateVal = moment(date, "yyyy-mm-dd").isValid();
 
 	const timeVal = moment(time, "hh:mm").isValid();
-	console.log(plateVal, dateVal, timeVal);
+
 	return { plateVal, dateVal, timeVal };
 };
 
@@ -27,6 +27,9 @@ export const checkPicoPlaca = async (picoPlacaData: PicoPlacaData) => {
 		});
 
 		const data = await resp.json();
+		if (!data.ok) {
+			throw new Error("The information doesnt have the right format");
+		}
 		return data.allowed;
 	} catch (error) {
 		throw new Error(error);
